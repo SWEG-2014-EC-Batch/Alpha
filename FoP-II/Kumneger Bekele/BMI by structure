@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+struct person{
+    string name;
+    char gender;
+    int age;
+    float weight;
+    float height;
+};
+int main(){
+    person person1;
+    char x;
+    do{
+
+cout<<"enter your name: "<<endl;
+cin>>person1.name;
+cout<<"enter your gender: "<<endl;
+cin>>person1.gender;
+cout<<"enter your age: "<<endl;
+cin>>person1.age;
+cout<<"enter your weight: "<<endl;
+cin>>person1.weight;
+cout<<"enter your height: "<<endl;
+cin>>person1.height;
+float bmi = (person1.weight)/pow(person1.height,2);
+if(bmi < 18.0 ){
+
+    cout<<"your bmi is "<<bmi<<" which is underweight"<<endl;
+}
+else if(18.0<=bmi && bmi<=25.0 ){
+
+     cout<<"your bmi is "<<bmi<<" which is normal"<<endl;
+}
+else if(bmi>25.0 ){
+
+     cout<<"your bmi is "<<bmi<<" which is overweight"<<endl;
+}
+
+else {
+    cout<<"invalid";
+}
+cout<<"do you want to continue: (y/n)";
+    cin>>x;
+    }
+    while(x == 'y');
+
+return 0;
+}
