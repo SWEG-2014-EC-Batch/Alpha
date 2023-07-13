@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+
+ struct comlex{
+ double realpart;
+ double imagine;
+ double realpart1;
+ double imagine1;
+
+ };
+ int main(){
+ comlex comlex1;
+ char choice;
+ double result,r2,r3,r4,r5,r6;
+ cout<<"enter real part of the complex numbers ";
+ cin>>comlex1.realpart;
+ cout<<"enter the imaginary part of complex number ";
+ cin>>comlex1.imagine;
+ cout<<"enter the second real part of the complex numbers ";
+ cin>>comlex1.realpart1;
+ cout<<"enter the second imaginary part of complex number ";
+ cin>>comlex1.imagine1;
+ cout<<"choose operation you want a = + , b = -, c = * , d = / "<<endl;
+ cin>>choice;
+if(choice == 'a'){
+        result = comlex1.realpart + comlex1.realpart1;
+        r2= comlex1.imagine + comlex1.imagine1;
+        cout<<"("<<result<<")"<<" + "<<"("<<r2<<"i)";
+}
+else if(choice == 'b'){
+ result = comlex1.realpart - comlex1.realpart1;
+        r2= comlex1.imagine - comlex1.imagine1;
+         cout<<"("<<result<<")"<<" + "<<"("<<r2<<"i)";
+}
+else if(choice == 'c'){
+    result= comlex1.realpart*comlex1.realpart1;
+    r2= comlex1.realpart*comlex1.imagine1;
+    r3=comlex1.imagine*comlex1.realpart1;
+    r4=comlex1.imagine*comlex1.imagine1;
+    r5=result - r4;
+    r6=r2+r3;
+    cout<<"("<<r5<<")"<<"+"<<"("<<r6<<"i)";
+}
+else if(choice == 'd'){
+        result = comlex1.realpart1*comlex1.imagine1;
+              r2 = comlex1.realpart/result;
+         r3 = comlex1.imagine/result;
+    cout<<"("<<r2<<")"<<"-"<<"("<<r3<<"i)";
+}
+else{
+    cout<<"invalid choice";
+}
+
+return 0;
+ }
