@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+struct studentattribute{
+string id;
+string name;
+double testmark;
+double finalmark;
+
+};
+
+int main()
+{
+ studentattribute studentattribute1;
+ cout<<"enter your name please: ";
+ cin>>studentattribute1.name;
+ cout<<"enter your id please: ";
+ cin>>studentattribute1.id;
+ cout<<"enter your test mark: ";
+ cin>>studentattribute1.testmark;
+ cout<<"enter your final mark: ";
+ cin>>studentattribute1.finalmark;
+ cout<<"the record of the student is name:"<<studentattribute1.name<<endl;
+ cout<<"                             id:"<<studentattribute1.id<<endl;
+ cout<<"                             testmark:"<<studentattribute1.testmark<<endl;
+  cout<<"                            finalmark:"<<studentattribute1.finalmark<<endl;
+double sum=studentattribute1.finalmark+studentattribute1.testmark;
+ cout<<"the sum of the mark is: "<<sum<<endl;
+    return 0;
+}
