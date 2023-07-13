@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+struct phone{
+int areacode=212;
+int exchange=767;
+int number=8900;
+};
+struct phonee{
+    string name;
+int areacode;
+int exchange;
+int number;
+};
+int main(){
+    int x=0;
+phone phone1;
+phonee phonee1;
+do{
+cout<<"enter your name"<<endl;
+cin>>phonee1.name;
+cout<<"enter the area code: "<<endl;
+cin>>phonee1.areacode;
+cout<<"enter the exchange: "<<endl;
+cin>>phonee1.exchange;
+cout<<"enter the number: "<<endl;
+cin>>phonee1.number;
+cout<<"the numbers are: "<<endl;
+cout<<phonee1.areacode<<"-"<<phonee1.exchange<<"-"<<phonee1.number<<endl;
+cout<<phone1.areacode<<"-"<<phone1.exchange<<"-"<<phone1.number;
+x++;
+}while(x<10);
+
+return 0;
+}
