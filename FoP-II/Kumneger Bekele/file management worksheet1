@@ -1,0 +1,39 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void readFile(const char* fileName, int arr[], int* count) {
+    ifstream file(fileName);
+    if (!file) {
+        cout << "Error opening file." << endl;
+        return;
+    }
+
+    *count = 0;
+    int num;
+    while (file >> num) {
+        arr[*count] = num;
+        (*count)++;
+    }
+
+    file.close();
+}
+
+int main() {
+    const int MAX_SIZE = 100;
+    int arr[MAX_SIZE];
+    int count;
+
+    const char* fileName = "data.txt";
+    readFile(fileName, arr, &count);
+
+    cout << "Number of entries in the file: " << count << endl;
+
+    cout << "Array elements: ";
+    for (int i = 0; i < count; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
