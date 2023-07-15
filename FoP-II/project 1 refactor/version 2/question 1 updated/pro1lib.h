@@ -11,8 +11,8 @@ struct items{
 void order_price(items[],int);
 void display_diff(items [],int);
 void display_price(items[],int);
-void accept_input(items item1[], int arr_size){
 
+void accept_input(items item1[], int arr_size){
     for (int i=0;i<arr_size;i++){
     cout<<"Please enter the name of the item: ";
     cin>>item1[i].name;
