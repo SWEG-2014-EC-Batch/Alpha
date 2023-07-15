@@ -11,7 +11,7 @@ int main()
     cout<<"Note: Please use only appropriate numeric values as an answer for every question asked below"<<endl;
     cout<<"please enter the current price of the item"<<endl;
     cin>>current_price;
-    cout<<"Please enter the inflation rate"<<endl;
+    cout<<"Please enter the inflation rate(in %)"<<endl;
     cin>>rate_inflation;
     cout<<"Please enter the current year"<<endl;
     cin>>current_year;
