@@ -49,8 +49,6 @@ void order_price(items item1[],int arr_size){
             }
             else{
                 item1[i].price_ptr[j]=item1[i].current_price;
-                //cout<<"Index: "<<j<<" current year: "<<item1[i].price_ptr[c]<<" Current price "<<item1[i].current_price<<" index price "<<item1[i].price_ptr[j]<<endl;
-                //c=c+1;
                 item1[i].current_price=item1[i].current_price+((item1[i].rate_inflation/100)*item1[i].current_price);
             }
         }
