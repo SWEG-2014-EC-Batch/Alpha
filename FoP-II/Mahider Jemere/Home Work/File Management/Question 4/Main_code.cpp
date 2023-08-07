@@ -9,12 +9,12 @@ struct emp_info{
     double hourly_wage,hr_payment;
     char sex;
 
-}emp1[3],emp2[3];
+}emp1[10],emp2[10];
 
 
 void str_data(){
     cin.ignore();
-    for(int i=0;i<3;i++){
+    for(int i=0;i<10;i++){
     cout<<"Please enter the name of the employee: ";
     getline(cin,emp1[i].name);
     cout<<"Please enter the sex of the employee: ";
@@ -31,14 +31,14 @@ void str_data(){
 void writedata(){
     fstream outinf("employee.dat",ios::out | ios::binary | ios::app);
     str_data();
-    int least,m,counter[3],arr_size,c;
-    for(int j=0;j<3;j++){
+    int least,m,counter[310],arr_size,c;
+    for(int j=0;j<10;j++){
         counter[j]=emp1[j].id_no;
     }
     arr_size=sizeof(counter)/sizeof(int);
     sort(counter, counter + arr_size);
-   for(int j=0;j<3;j++){
-    for(int k=0;k<3;k++){
+   for(int j=0;j<10;j++){
+    for(int k=0;k<10;k++){
         if(counter[j]==emp1[k].id_no){
             c=k;
         }
@@ -54,7 +54,7 @@ void writedata(){
 
 void readdata(){
     fstream empinf("employee.dat",ios::in | ios::binary);
-    for(int h=0;h<3;h++){
+    for(int h=0;h<10;h++){
         empinf.read((char *)&emp2[h], sizeof(emp2[h]));
         char c='n';
         do{
@@ -73,7 +73,7 @@ void updatedata(){
     fstream outinf("employee.dat",ios::out | ios::binary);
     int choice;
     char c='n';
-    for(int i=0;i<3;i++){
+    for(int i=0;i<10;i++){
         empinf.read((char *)&emp2[i], sizeof(emp2[i]));
         do{
         cout<<"Do you want to update the(for "<<emp2[i].name<<")\n1. Hourly wage\n2. Experience\n3. Other numbers to exit? "<<endl;
@@ -105,7 +105,7 @@ void updatedata(){
 
 void printdata(){
      fstream empinf("employee.dat",ios::in | ios::binary);
-    for(int h=0;h<3;h++){
+    for(int h=0;h<10;h++){
         empinf.read((char *)&emp2[h], sizeof(emp2[h]));
         cout<<"Name: "<<emp2[h].name<<endl;
         cout<<"Sex: "<<emp2[h].sex<<endl;
