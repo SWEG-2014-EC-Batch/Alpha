@@ -17,6 +17,7 @@ using namespace std;
 void search_books();
 void choice();
 void all_book();
+void all_user();
 int main()
 {
     char yes_no;
@@ -64,7 +65,7 @@ void choice(){
             }
         }
     else if(choice_main==2){
-            cout<<"1.User registration\n2.Rating"<<endl;
+            cout<<"1.User registration\n2.Rating\n3.All User's"<<endl;
             cin>>choice_num;
             if(choice_num==1){
                 user_reg();
@@ -72,8 +73,8 @@ void choice(){
             else if(choice_num==2){
                 rate_book();
             }
-            else{
-                cout<<"Please enter a valid input"<<endl;
+            else {
+                
             }
 
     }
@@ -163,7 +164,49 @@ void all_book(){
         }
 
 
+        file_book.close();
+        }
+    void all_user(){
+        ifstream file_book("User.txt");
+        string line;
+        if(!file_book.is_open()){
+            cout<<"Couldn't open the file"<<endl;
+        }
+        else{
+                cout<<"Order of the column = User name,Sex,Contact information"<<endl;
+                cout<<endl;
+                vector<vector<string>>data;
+            while(getline(file_book,line)){
+                vector<string> tokens;
+                stringstream ss(line);
+                string token;
+                while(getline(ss,token,',')){
+                    tokens.push_back(token);
+                }
+                data.push_back(tokens);
+            }
+                // Calculate column widths based on the maximum length of each column
+        vector<int> columnWidths(data[0].size(), 0);
+        for (const vector<string>& row : data) {
+            for (size_t i = 0; i < row.size(); ++i) {
+                if (row[i].length() > static_cast<size_t>(columnWidths[i])) {
+                    columnWidths[i] = row[i].length();
+                }
+            }
+        }
+
+        // Print the data with proper column spacing
+        for (const vector<string>& row : data) {
+            for (size_t i = 0; i < row.size(); ++i) {
+                cout << setw(columnWidths[i] + 5) << left << row[i]; // Adjust column width
+            }
+            cout << endl;
+        }
+
+
         file_book.close();}
+}
+
 }
 
 
