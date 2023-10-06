@@ -1,0 +1,2 @@
+Almaz Haile,Female,987563412
+Samuel Ayele,Male,987654321
