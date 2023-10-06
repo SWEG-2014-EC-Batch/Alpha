@@ -73,10 +73,12 @@ void choice(){
             else if(choice_num==2){
                 rate_book();
             }
-            else {
-                
+            else if(choice_num==3){
+                all_user();
             }
-
+           else{
+                cout<<"Please enter valid input"<<endl;
+           }
     }
     else{
         stat_choice();
