@@ -14,7 +14,7 @@ int main()
 }
 
 
-// Return type of function is void because value is not returned.
+// Return type of function is bool because boolean value is  returned.
 bool prime(int a)
 {
 
