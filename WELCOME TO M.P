@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+ void welcome();
+int main(){
+ welcome();
+ return 0;
+}
+void welcome(){
+     string name;
+    cout << "please enter your name" <<endl;
+
+    getline(cin,name);
+    cout << "hello " << name << endl;
+    cout << "welcome to M.P!";
+}
